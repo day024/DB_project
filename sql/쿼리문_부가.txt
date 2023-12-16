@@ -1,0 +1,23 @@
+--센터의 운영요일/시간 검색
+select 
+ 	c.*
+FROM
+	center1 c
+WHERE
+	C.center_time LIKE '%토%';
+
+
+--특정 센터의 리뷰보기
+SELECT
+	c.center_id,
+	c.center_name,
+	
+	r.review_content ,
+	r.review_rate
+FROM
+	center1 c
+INNER JOIN review r 
+on
+	c.center_id = r.center_id
+WHERE 
+	c.center_id = 83
